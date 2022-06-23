@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+
+        h1 {
+            color: white;
+            font-size: 380px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h2 {
+            color: white;
+            font-size: 70px;
+            text-align: center;
+            padding-top: 150px;
+
+        }
+    </style>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+
+        function toggleFullScreen() {
+            var doc = window.document;
+            var docEl = doc.documentElement;
+
+            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                requestFullScreen.call(docEl);
+            }
+            else {
+                cancelFullScreen.call(doc);
+            }
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.keyCode == 13) {
+                toggleFullScreen();
+            }
+        }, false);
+
+        function getDate() {
+            var realSeconds = 0;
+            var realMinutes = 0;
+            var newDate = new Date();
+            var nowHours = newDate.getHours();
+            var nowMinutes = newDate.getMinutes();
+            var nowSeconds = newDate.getSeconds();
+            if (nowSeconds < 10) {
+                realSeconds = '0' + nowSeconds;
+            } else {
+                realSeconds = nowSeconds;
+            }
+            if (nowMinutes < 10) {
+                realMinutes = '0' + nowMinutes;
+
+            } else {
+                realMinutes = nowMinutes;
+
+            }
+            var time = nowHours + ':' + realMinutes + ':' + realSeconds;
+            document.getElementsByTagName('h1')[0].innerHTML = time
+
+        }
+        var pauseTime = setInterval("getDate()", 1000);
+
+
+        // 添加天气
+        jinrishici.load(function (result) {
+            var sentence = document.querySelector("#poem_sentence")
+            var info = document.querySelector("#poem_info")
+            sentence.innerHTML = result.data.content
+            info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+            console.log('hello');
+        });
+
+        // 异步请求 每5秒刷新一次
+
+
+        // 添加一英语
+
+    </script>
+
+</head>
+
+<body>
+    <div id="poem_sentence"></div>
+    <div id="poem_info"></div>
+    <h2 id="jinrishici-sentence">正在加载今日诗词....</h2>
+    <h1></h1>
+</body>
+
+</html>
