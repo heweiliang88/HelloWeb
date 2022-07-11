@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://github.com/fengxianqi/front_end-demos/blob/master/src/canvas/board.html
+
+
+shaoxiongdu/Clone-Wars: 100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc. See source code, demo links, tech stack, github stars.: https://github.com/shaoxiongdu/Clone-Wars
+bradtraversy/vanillawebprojects: Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries: https://github.com/bradtraversy/vanillawebprojects
+forrany/Web-Project: 前端练手小项目: https://github.com/forrany/Web-Project
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #000;
+            text-align: center;
+        }
+
+        canvas {
+            background-color: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let my_canvas = document.getElementById('my_canvas');
+            let gd = my_canvas.getContext('2d');
+            my_canvas.onmousedown = function (ev) {
+                let preX = ev.offsetX, preY = ev.offsetY;
+                document.onmousemove = function (ev) {
+                    if (ev.target !== my_canvas) {
+                        return;
+                    }
+                    //一旦调用了beginPath，就必须重新moveTo然后再lineTo
+                    gd.beginPath();
+                    gd.moveTo(preX, preY);
+                    gd.lineTo(ev.offsetX, ev.offsetY);
+                    preX = ev.offsetX, preY = ev.offsetY;
+                    gd.lineWidth = 5;
+                    gd.strokeStyle = document.getElementById('my_color').value;
+                    gd.stroke();
+                }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="color">
+
+    <canvas id="myCanvas" width="800px" height="800px">
+        你的浏览器不支持
+    </canvas>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap");
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-decoration: none;
+    }
+
+    :root {
+      font-size: 15px;
+      top: 20px;
+      left: 20px;
+    }
+
+    a {
+      color: black;
+    }
+
+    body {
+      font-family: "Noto Sans SC", sans-serif;
+    }
+
+    /* 添加文字效果渐变 滚动颜色
+        https://segmentfault.com/a/1190000011882933
+      */
+    header .navbar-ul li {
+      font-size: 20px;
+      background: linear-gradient(to right, blue, red);
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    .carousel-item {
+      position: relative;
+    }
+
+    /* 字体怎么才能动态大小 分辨率高 大 分辨率小 小 */
+    .banner-container {
+      width: 650px;
+      height: 250px;
+      position: absolute;
+      top: 10rem;
+      left: 10rem;
+      padding: 30px;
+      background: hsla(0, 0%, 100%, .1);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+    }
+
+    .banner-container .banner-title {
+      font-size: 5rem;
+      color: white;
+    }
+
+    .banner-container .bannner-btn {
+      color: white;
+      border: 1px solid white;
+      padding: 10px 40px;
+      margin: 20px 0px 0px 30px;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      border-radius: 25px;
+    }
+
+    .banner-container .bannner-btn:hover{
+      background-color: white;
+      color: black;
+    }
+
+
+  </style>
+
+<!--
+  添加loader库 js判断 如果
+
+ -->
+
+</head>
+
+<body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+
+  <script>
+    var myCarousel = document.getElementById('myCarousel')
+
+    myCarousel.addEventListener('slide.bs.carousel', function () {
+      // do something...
+    })
+  </script>
+
+  <header>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-ul">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">主页</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">关于我</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">画廊</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">链接</a></a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      </nav>
+  </header>
+  <main>
+    <div class="row">
+      <section class="banner col-sm-12 col-md-12">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/violet-05.jpg" class="d-block w-100" alt="...">
+              <div class="banner-container">
+                <h1 class="banner-title">First slide label</h1>
+                <button type="button" class="btn bannner-btn">了解更多</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/violet-02.jpg" class="d-block w-100" alt="...">
+              <div class="banner-container">
+                <h1 class="banner-title">紫罗兰永恒花园</h1>
+                </h1>
+ <button type="button" class="btn bannner-btn">了解更多</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/violet-03.jpg" class="d-block w-100" alt="...">
+              <div class="banner-container">
+                <h1 class="banner-title">Third slide label</h1>
+ <button type="button" class="btn bannner-btn">了解更多</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </section>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+
+        <h1>紫罗兰永恒花园</h1>
+      </div>
+      <div class="col-sm-3">
+
+      </div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
+    </div>
+  </main>
+
+  <footer>
+    <section class="footer-top"></section>
+    <section class="footer-center"></section>
+    <section class="footer-bootom"></section>
+  </footer>
+
+
+</body>
+
+</html>

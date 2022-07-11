@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- https://codepen.io/sanketbodke/pen/xxWxRWp -->
+    <style>
+        /*===== VARIABLES CSS =====*/
+
+        :root {
+            /*===== Colors =====*/
+            --first-color: #272a3a;
+            --first-color-light: #8a8eaa;
+            --first-color-lighten: #f8f8fc;
+            /*===== Font and typography =====*/
+            --body-font: "Ubuntu", sans-serif;
+            --normal-font-size: 1rem;
+            --smaller-font-size: 0.813rem;
+        }
+
+
+        /*===== BASE =====*/
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--body-font);
+            background-color: var(--first-color-lighten);
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        /*===== DRAG and DROP =====*/
+
+        .drop,
+        .drop_container {
+            display: grid;
+        }
+
+        .drop {
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drop_container {
+            row-gap: 1rem;
+            padding: 2rem;
+            box-shadow: 4px 4px 16px #e1e1e1;
+        }
+
+        .drop_card,
+        .drop_data {
+            display: flex;
+            align-items: center;
+        }
+
+        .drop_card {
+            width: 360px;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem.75rem 0.75rem;
+            background-color: var(--first-color-lighten);
+            box-shadow: 4px 4px 16px #e1e1e1, -2px -2px 16px #fff;
+            border-radius: 2.5rem;
+        }
+
+        .drop_img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .drop_name {
+            font-size: var(--normal-font-size);
+            color: var(--first-color);
+            font-weight: 500;
+        }
+
+        .drop_profession {
+            font-size: var(--smaller-font-size);
+            color: var(--first-color-light);
+        }
+
+        .drop_social {
+            margin: 0 0.375rem;
+            color: var(--first-color-light);
+            transition: 0.4s;
+        }
+
+        .drop_social:hover {
+            color: var(--first-color);
+        }
+
+
+        /* Class name for the chosen item */
+
+        .sortable-chosen {
+            box-shadow: 8px 8px 32px #e1e1e1;
+        }
+
+
+        /* Class name for the dragging item */
+
+        .sortable-drag {
+            opacity: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="drop">
+        <div class="drop_container" id="drop-items">
+            <div class="drop_card">
+                <div class="drop_data">
+                    <img src="https://i.postimg.cc/BvPJ7FHN/img1.jpg" alt="img1" class="drop_img">
+
+                    <div>
+                        <h1 class="drop_name">Clay</h1>
+                        <span class="drop_profession">Web developer</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="drop_social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="drop_card">
+                <div class="drop_data">
+                    <img src="https://i.postimg.cc/SRkqKt5t/img2.jpg" alt="img1" class="drop_img">
+
+                    <div>
+                        <h1 class="drop_name">Sara Mill</h1>
+                        <span class="drop_profession">Web designer</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="drop_social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="drop_card">
+                <div class="drop_data">
+                    <img src="https://i.postimg.cc/9M3C6fB2/img3.jpg" alt="img1" class="drop_img">
+
+                    <div>
+                        <h1 class="drop_name">Joe Smith</h1>
+                        <span class="drop_profession">Video Editor</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="drop_social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="drop_card">
+                <div class="drop_data">
+                    <img src="https://i.postimg.cc/qqwr6xHB/img4.jpg" alt="img1" class="drop_img">
+
+                    <div>
+                        <h1 class="drop_name">Rose Taylor</h1>
+                        <span class="drop_profession">ui/ux designer</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="drop_social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="drop_social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>/*===== DRAG and DROP =====*/
+        const dropItems = document.getElementById('drop-items')
+
+        new Sortable(dropItems, {
+            animation: 350,
+            chosenClass: "sortable-chosen",
+            dragClass: "sortable-drag"
+        });</script>
+</body>
+
+</html>
