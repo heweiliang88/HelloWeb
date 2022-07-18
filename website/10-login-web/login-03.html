@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        text-decoration: none;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #112d42;
+      }
+
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        min-height: 100%;
+        background: #03a9f4;
+      }
+
+      section .container {
+        position: relative;
+        min-width: 1100px;
+        min-height: 550px;
+        display: flex;
+        z-index: 1000;
+      }
+
+      section .container .contactinfo {
+        position: absolute;
+        top: 40px;
+        width: 350px;
+        height: calc(100% - 80px);
+        background: #0f3959;
+        z-index: 1;
+        page-break-inside: 40px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      section .container .contactinfo h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      section .container .contactinfo .info {
+        position: relative;
+        margin: 20px 0;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      section .container .contactinfo .info li {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+        cursor: pointer;
+        align-items: flex-start;
+      }
+
+      section .container .contactForm {
+        position: absolute;
+        padding: 100px 400px;
+        left: 15%;
+        background-color: #fff;
+        box-sizing: border-box;
+      }
+      section .container .contactForm h2 {
+        color: #0f3959;
+      }
+
+      section .container .contactForm .inputBox {
+        position: relative;
+        margin: 10px;
+      }
+      section .container .contactForm input {
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+        font-size: 30px;
+      }
+      section .container .contactForm .inputBox span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: gray;
+        margin: 0px 0px 20px 0px;
+      }
+
+      section .container .contactForm .inputBox button {
+        width: 200px;
+        height: 50px;
+        background: #0f3959;
+        color: white;
+        font-size: 20px;
+        border: none;
+        margin-top: 20px;
+      }
+
+      section .container .contactForm textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="contactinfo">
+          <div>
+            <h2>联系我们</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa-li fa fa-map"></i></span>
+                <span>Lorem ipsum, dolor sit amet consectetur</span>
+              </li>
+              <li>
+                <span><i class="fa-li fa fa-mail-reply"></i></span>
+                <span>adipisicing elit@163.com</span>
+              </li>
+              <li>
+                <span><i class="fa-li fa fa-phone"></i></span>
+                <span>400-7894-234</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contactForm">
+          <h2>发送信息</h2>
+          <div class="formBox">
+            <div class="inputBox w50">
+              <input type="text" name="" id="" required />
+              <span>姓名</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="text" name="" id="" required />
+              <span>昵称</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="email" name="" id="" required />
+              <span>电子邮件</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="tel" name="" id="" required />
+              <span>电话号码</span>
+            </div>
+            <div class="inputBox w100">
+              <textarea name="" id="" cols="30" rows="10" required></textarea>
+              <span>反馈信息</span>
+            </div>
+            <div class="inputBox w100">
+              <button>发送</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

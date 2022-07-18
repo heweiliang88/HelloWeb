@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+        font-size: 20px;
+      }
+      #map {
+        padding: 20px;
+      }
+      #location {
+        padding: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="map">
+      <p id="location">点击按钮获取您当前坐标</p>
+      <button onclick="getLocation()">获取坐标</button>
+      <button onclick="voiceBroadcast()">朗读位置</button>
+    </section>
+    <script>
+      var x = document.getElementById("location");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+          // navigator.geolocation.watchPosition(showPosition);
+        } else {
+          x.innerHTML = "该浏览器不支持获取地理位置。";
+        }
+      }
+
+      var loc;
+
+      function showPosition(position) {
+        var loc =
+          "纬度: " +
+          position.coords.latitude +
+          "<br>经度: " +
+          position.coords.longitude +
+          "<br>精度：" +
+          position.coords.accuracy +
+          "<br>海拔：" +
+          position.coords.altitude +
+          "<br>位置的海拔精度：" +
+          position.coords.altitudeAccuracy +
+          "<br>方向，从正北开始以度计：" +
+          position.coords.heading +
+          "<br>	速度，以米/每秒计：" +
+          position.coords.speed +
+          "<br>响应的日期/时间：" +
+          position.timestamp;
+        x.innerHTML = loc;
+        return loc;
+      }
+
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "用户拒绝对获取地理位置的请求。";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "位置信息是不可用的。";
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "请求用户地理位置超时。";
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "未知错误。";
+            break;
+        }
+      }
+
+      function voiceBroadcast() {
+        let str = x.getInnerHTML();
+        var msg = new SpeechSynthesisUtterance(tell);
+        window.speechSynthesis.speak(msg);
+      }
+    </script>
+  </body>
+</html>

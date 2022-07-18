@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        .container{
+            min-width: 1000px;
+        }
+
+        header .nav{
+            display: flex;
+            height: 60px;
+            line-height: 60px;
+            justify-content: space-around;
+        }
+        .logo{
+            margin-top: 10px;
+        }
+
+        .navigation{
+            display: flex;
+            justify-content: space-around;
+        }
+        .navigation li{
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .content{
+            width: 1000px;
+            height: 80vh;
+            /* background-color: red; */
+        }
+
+        .bannerleft{
+            width: 100px;
+            height: 80vh;
+            background-color: pink;
+        }
+
+         .bannerright{
+             width: 100px;
+             height: 80vh;
+             background: green;
+         }
+    </style>
+  </head>
+  <body>
+    <!--
+        img
+
+
+        https://artwork.starbucks.com.cn/banners-homepage-banner/main_9b62183b-633a-4dc1-a4a6-627a22cca859.png
+
+
+        https://www.starbucks.com.cn/assets/images/account/1-star-redeem-right-content.png
+
+       -->
+
+    <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <a href="">
+            <img
+              src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg"
+              alt=""
+            />
+          </a>
+        </div>
+        <ul class="navigation">
+          <li>主页</li>
+          <li>菜单</li>
+          <li>优惠</li>
+          <li>联系</li>
+      </nav>
+      </div>
+    </header>
+
+    <main>
+        <div class="container">
+                    <div class="bannerleft"></div>
+                    <div class="bannerright"></div>
+        </div>
+    </main>
+  </body>
+</html>

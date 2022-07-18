@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      iframe {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 04bd2a7ed943ca2246cee2df9bf5750e  -->
+    <iframe id="map" frameborder="0"></iframe>
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+          // navigator.geolocation.watchPosition(showPosition);
+        } else {
+          x.innerHTML = "该浏览器不支持获取地理位置。";
+        }
+      }
+
+      function showPosition(position) {
+        let key = "04bd2a7ed943ca2246cee2df9bf5750e";
+        let map =
+          "https://m.amap.com/navi/?dest=" +
+          position.coords.longitude +
+          "," +
+          position.coords.latitude +
+          "&destName=湛江&hideRouteIcon=1&key=" +
+          key;
+        document.getElementById("map").src = map;
+      }
+
+      (function () {
+        var iframe = document.getElementById("map").contentWindow;
+        document.getElementById("map").onload = function () {
+          iframe.postMessage("hello", "https://m.amap.com/picker/");
+        };
+        window.addEventListener(
+          "message",
+          function (e) {
+            // alert("您选择了:" + e.data.name + "," + e.data.location);
+          },
+          false
+        );
+      })();
+
+      getLocation();
+    </script>
+  </body>
+</html>
