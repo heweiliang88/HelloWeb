@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      table td {
+        width: calc(100vw / 3 - 6px);
+        height: calc(100vh / 3 - 6px);
+        font-size: 150px;
+        color: white;
+        text-align: center;
+        border: 2px solid white;
+        background-color: purple;
+        transition: 0.5s;
+      }
+
+      table tr:hover td{
+        background-color: white;
+        color: purple;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

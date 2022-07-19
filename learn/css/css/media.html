@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      /* 不小于968px  x>968 */
+      @media screen and (min-width: 968px) {
+        body::before {
+          content: "大于968px";
+          height: 100vh;
+          font-size: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: gainsboro;
+        }
+      }
+
+      @media screen and (min-width: 400px) and (max-width: 967px) {
+        body::before {
+          content: "400~968px";
+          height: 100vh;
+          font-size: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: silver;
+        }
+      }
+
+      /* 限制元素不大于400px  x<400*/
+      @media screen and (min-width: 0px) and (max-width: 400px) {
+        body::before {
+          content: "0~400px";
+          height: 100vh;
+          font-size: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: gray;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

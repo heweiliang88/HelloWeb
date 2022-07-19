@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&family=Ma+Shan+Zheng&family=Noto+Sans+JP&family=Noto+Serif+SC:wght@200;400;600&family=Roboto&family=ZCOOL+KuaiLe&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+      }
+
+      table {
+        margin-top: 20px;
+      }
+
+      table caption {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+
+      table th,
+      table td {
+        text-align: center;
+        font-size: 25px;
+        padding: 30px;
+      }
+
+      .bggray {
+        background-color: gray;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <table border="1" cellspacing="0">
+        <caption>
+          大标题
+        </caption>
+        <thead>
+          <tr>
+            <th>thead1</th>
+            <th>thead2</th>
+            <th>thead3</th>
+            <th>thead4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2" class="bggray">文本1</th>
+            <td>文本2</td>
+            <td rowspan="2" class="bggray">文本3</td>
+            <th rowspan="3" class="bggray">文本9</th>
+          </tr>
+          <tr>
+            <!-- <th>文本4</th> -->
+            <td>文本5</td>
+            <!-- <td>文本6</td> -->
+          </tr>
+          <tr>
+            <th>文本7</th>
+            <td colspan="2" class="bggray">文本8</td>
+            <!-- <td>文本9</td> -->
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>tfoot1</td>
+            <td>tfoot2</td>
+            <td>tfoot3</td>
+            <td>tfoot4</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </body>
+</html>

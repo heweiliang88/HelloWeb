@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        section{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>表单</h1>
+        <form action="form.php" name="formbox" method="get" target="_black">
+            <div class="input__box">
+                <label for="">用户名</label>
+                <input type="text" name="usename" maxlength="10" placeholder="输入用户名" />
+            </div>
+            <div class="input__box">
+                <label for="">邮箱</label>
+                <input type="email" placeholder="输入Email" />
+            </div>
+            <div class="input__box">
+                <label for="">密码</label>
+                <input type="password" placeholder="输入密码" />
+            </div>
+            <div class="textarea__box">
+                <label for="">文本域</label>
+               <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="text__box">
+                <label for="">文件</label>
+                <input type="file" placeholder="选择文件" />
+            </div>
+             <div class="text__box">
+                <label for="">颜色</label>
+                <input type="color"/>
+            </div>
+             <div class="text__box">
+                <label for="">隐藏域</label>
+                <input type="hidden"/>
+            </div>
+             <div class="text__box">
+                <label for="">图片域</label>
+                <input type="image" src="https://api.vvhan.com/api/bing?type=sj" width="100px" height="100px" alt="">
+            </div>
+            <div class="btn__box">
+                <label for="">按钮</label>
+                <input type="button" value="input按钮" />
+                <button>button按钮</button>
+            </div>
+            <div class="btn__box">
+                <label for="">提交按钮</label>
+                <input type="submit" value="提交按钮" />
+            </div>
+             <div class="btn__box">
+                <label for="">重置按钮</label>
+                <input type="reset" value="重置按钮" />
+            </div>
+             <div class="checkout__box">
+                <label for="">多选</label>
+                <input type="checkbox" name="fruit" value="apple" />apple
+                <input type="checkbox" name="fruit" value="banner" />banner
+                <input type="checkbox" name="fruit" value="tomatoes" />tomatoes
+            </div>
+             <div class="radio__box">
+                <label for="">单选</label>
+                <input type="radio" name="people" value="男" />男
+                <input type="radio" name="people" value="女" />女
+            </div>
+
+            <div class="select_box">
+                <h4>下拉菜单</h4>
+               <select name="numbers" id="">
+                   <option value="10">10</option>
+                   <option value="100">100</option>
+                   <option value="1000">1000</option>
+                   <option value="1000">10000</option>
+               </select>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      section {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+      .box {
+        height: 150px;
+        width: 150px;
+        /* margin: 0 auto; */
+        box-sizing: border-box;
+        padding: 10px;
+        border: 10px solid yellowgreen;
+        outline: 10px solid sandybrown;
+        background: linear-gradient(red, blue);
+      }
+      .posab {
+        position: absolute;
+        bottom: 50%;
+        right: 50%;
+        /* transform: translate(25%,25%); */
+      }
+      .posre {
+        background: red;
+        border: none;
+        position: relative;
+        top: 100px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="box"></div>
+      <div class="posab box"></div>
+      <div class="posre box"></div>
+    </section>
+  </body>
+</html>

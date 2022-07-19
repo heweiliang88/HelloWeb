@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      #header {
+        height: 15vh;
+        background-color: blueviolet;
+      }
+      #main {
+        height: 70vh;
+        position: relative;
+      }
+      #leftsection {
+        width: 30vw;
+        height: 70vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: cadetblue;
+      }
+      #rightsection {
+        width: 70vw;
+        height: 70vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: yellowgreen;
+      }
+      #footer {
+        height: 15vh;
+        background-color: darkcyan;
+      }
+      h1 {
+        font-size: 80px;
+        color: white;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 600px) {
+        #main {
+          height: 70vh;
+          position: relative;
+        }
+        #leftsection {
+          width: 100vw;
+          height: 35vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: cadetblue;
+        }
+        #rightsection {
+          width: 100vw;
+          height: 35vh;
+          position: absolute;
+          top: 35vh;
+          left: 0;
+          background-color: yellowgreen;
+        }
+      }
+
+      @media screen and (min-width: 968px) {
+        #leftsection {
+          width: 50vw;
+          height: 75vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: cadetblue;
+        }
+        #rightsection {
+          width: 50vw;
+          height: 75vh;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: yellowgreen;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>header</h1>
+    </div>
+    <div id="main">
+      <div id="leftsection">
+        <h1>subsection</h1>
+      </div>
+      <div id="rightsection">
+        <h1>subsection</h1>
+      </div>
+    </div>
+    <div id="footer">
+      <h1>footer</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <base href="http://www.baidu.com" target="_black">
+
+    <title>Document</title>
+    <style>
+      /* 注释 */
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+
+      body {
+        padding: 50px;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .p1 {
+        color: indianred;
+      }
+
+      #p2 {
+        color: cadetblue;
+      }
+
+      span {
+        font-size: 20px;
+      }
+
+      .s1 {
+        color: red;
+      }
+
+      a {
+        display: inline-block;
+      }
+
+      bdo {
+        font-size: 30px;
+      }
+
+      .q {
+        display: inline-block;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+
+      /* ??? */
+      #amadio:visited #madio {
+        color: red;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+      <a href="index">test</a>
+    <a href="#madio" target="" title="锚点链接" name="test" id="amadio"
+      >本页锚点链接</a
+    >
+    <a href="https://www.runoob.com/html/html-formatting.html#378ea53b-31dc-66fa-87c6-179a1ff4da79" target="" title="锚点链接" name="test" id="amadio"
+      >其他页面锚点链接</a
+    >
+    <!-- 注释 -->
+    <div>
+      <h1>h1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+    </div>
+    <div>
+      div是块级元素 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
+      tenetur ab autem reiciendis culpa placeat voluptatem minima facere
+      accusantium repellendus, illum vero quibusdam, delectus explicabo labore
+      itaque ullam magnam saepe?
+    </div>
+    <span class="s1"> span 是行内元素 |||||||||| </span>
+    <span> Illo qui est, consequatur labore iusto delectus quibusdam ea </span>
+    <p class="p1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex sint,
+      nesciunt ullam corporis rem quasi nam cumque ipsam qui repellendus vel
+      officiis, quos praesentium ab voluptate corrupti illum commodi.
+    </p>
+    <p id="p2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex sint,
+      nesciunt ullam corporis rem quasi nam cumque ipsam qui repellendus vel
+      officiis, quos praesentium ab voluptate corrupti illum commodi.
+    </p>
+    <a href="http://www.baidu.com">跳转百度</a>
+    <p>空链接</p>
+    <a href="#">点击空链接</a>
+    <a href="javascript:;">点击空链接</a>
+    <p>操作js代码 威胁操作</p>
+    <a href="javascript:alert('message');">点击淡出窗口</a>
+    <p>
+      target _self 默认值 _black 在新窗口中打开方式_top 顶层窗口 _parent 父窗口
+    </p>
+    <a href="http://www.baidu.com" target="_self">_self 默认值 </a
+    ><a href="http://www.baidu.com" target="_black">_black 在新窗口中打开 </a
+    ><a href="http://www.baidu.com" target="_top">_top 顶层窗口 </a
+    ><a href="http://www.baidu.com" target="_parent">_parent 父窗口 </a>
+
+    <hr width="100%" color="pink" />
+    <p>图片链接</p></p>
+    <a href="http://s.cn.bing.net/th?id=OHR.PeruvianRainforest_ZH-CN4066508593_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp">
+      <img
+        src="http://s.cn.bing.net/th?id=OHR.PeruvianRainforest_ZH-CN4066508593_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+        alt=""
+        srcset=""
+        width="500px"
+        height="500px"
+      />
+    </a>
+
+    <br />
+    <code>
+      code: console.log('Hello HTML') console.log('Hello HTML')
+      console.log('Hello HTML')
+    </code>
+    <br />
+    <kbd>kbd:ctrl + c</kbd>
+    <mark>mark:重点加粗</mark>
+    <var>var html = 1000</var>
+    <pre>
+        定义预格式文本
+    </pre>
+    <samp> 代码样本 </samp>
+    <abbr title="">缩写文字</abbr>
+    <address>180.199.252.29</address>
+    <bdo dir="ltr"
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+    </bdo>
+    <br />
+    <bdo dir="rtl"
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+    </bdo>
+    <blockquote>
+      长引用：凤凰台上凤凰游，凤去台空江自流。吴宫花草埋幽径，晋代衣冠成古丘。三山半落青天外，二水中分白.
+    </blockquote>
+    <q> 短引用：凤凰台上凤凰游，凤去台空江自流。 </q>
+    <cite> 引用、引证：凤凰台上凤凰游，凤去台空江自流。 </cite>
+    <dfn>定义一个定义项目</dfn>
+
+    <q class="q">
+      q 短引用：凤凰台上凤凰游，凤去台空江自流。:Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ducimus aspernatur rerum mollitia nemo
+      obcaecati dolor enim ut quae officiis ex quos eius totam nisi maiores
+      beatae ipsa, praesentium, alias quas!
+    </q>
+
+    <p id="madio">锚点链接跳转到这里</p>
+  </body>
+</html>
